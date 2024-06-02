@@ -1,0 +1,7 @@
+device = "eth0"
+filter = "udp and port 5060"
+sumocollectorurl = "https://collectors.au.sumologic.com/receiver/v1/http/..."
+envprefix = "sip"
+environment = "dev"
+envlocation = "mx" 
+debug = false

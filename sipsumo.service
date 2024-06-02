@@ -1,0 +1,9 @@
+[Unit]
+Description=GoSIP Sumo
+After=network.target
+
+[Service]
+ExecStart=/bin/sh -c '/opt/sipsumo/sipsumo 2>&1 >> /var/log/sipsumo.log'
+
+[Install]
+WantedBy=default.target
