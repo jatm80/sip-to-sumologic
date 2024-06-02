@@ -173,7 +173,10 @@ func main() {
 
 			sumocategory := conf.EnvPrefix + "/" + conf.Environment + "/" + conf.EnvLocation + "/" + hostname
 
-			client := sumo.NewHTTPSourceClient(sumoURL)
+			client,err := sumo.NewHTTPSourceClient(sumoURL)
+			if err != nil {
+				log.Fatalln(err)
+			}
 			client.SetHeaders("UA", conf.EnvPrefix, hostname, sumocategory)
 			client.Send(strings.NewReader(logsumo))
 
